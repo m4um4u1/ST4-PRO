@@ -17,7 +17,7 @@ public class Main {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                System.out.println(sd.getId() +" "+ sd.getName() +" "+ sd.getValue() +" "+ sd.getSymbol());
+                System.out.println(sd.getId() +" "+ sd.getName() +" "+ sd.getValue() + sd.getSymbol());
             }
         },0 , 5000);
     }
