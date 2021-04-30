@@ -1,4 +1,4 @@
-package tempsensor;
+package humiditysensor;
 
 import com.hazelcast.client.HazelcastClient;
 import com.hazelcast.core.HazelcastInstance;
@@ -17,17 +17,17 @@ import org.eclipse.milo.opcua.stack.core.types.enumerated.TimestampsToReturn;
 import org.eclipse.milo.opcua.stack.core.types.structured.MonitoredItemCreateRequest;
 import org.eclipse.milo.opcua.stack.core.types.structured.MonitoringParameters;
 import org.eclipse.milo.opcua.stack.core.types.structured.ReadValueId;
-import static com.google.common.collect.Lists.newArrayList;
-import java.util.concurrent.CompletableFuture;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
+import static com.google.common.collect.Lists.newArrayList;
 import static org.eclipse.milo.opcua.stack.core.types.builtin.unsigned.Unsigned.uint;
 
 public class Publisher {
 
     private HazelcastInstance hz;
-    private static final String TOPIC_NAME = "temp_sensor";
+    private static final String TOPIC_NAME = "humidity_sensor";
     private static ITopic topic = null;
     private Client client;
     private CompletableFuture<OpcUaClient> future;
@@ -42,7 +42,7 @@ public class Publisher {
 
     public void readName() {
         try {
-            NodeId nodeId = new NodeId(6, "::Program:Cube.Status.Parameter[3].Name");
+            NodeId nodeId = new NodeId(6, "::Program:Cube.Status.Parameter[2].Name");
             DataValue dataValue = client.getClient().readValue(0, TimestampsToReturn.Both, nodeId).get();
             Variant variant = dataValue.getValue();
             sd.setName(variant.getValue().toString());
@@ -52,7 +52,7 @@ public class Publisher {
     }
     public void readId() {
         try {
-            NodeId nodeId = new NodeId(6, "::Program:Cube.Status.Parameter[3].ID");
+            NodeId nodeId = new NodeId(6, "::Program:Cube.Status.Parameter[2].ID");
             DataValue dataValue = client.getClient().readValue(0, TimestampsToReturn.Both, nodeId).get();
             Variant variant = dataValue.getValue();
             sd.setId(Integer.parseInt(variant.getValue().toString()));
@@ -62,7 +62,7 @@ public class Publisher {
     }
     public void readSymbol() {
         try {
-            NodeId nodeId = new NodeId(6, "::Program:Cube.Status.Parameter[3].Unit");
+            NodeId nodeId = new NodeId(6, "::Program:Cube.Status.Parameter[2].Unit");
             DataValue dataValue = client.getClient().readValue(0, TimestampsToReturn.Both, nodeId).get();
             Variant variant = dataValue.getValue();
             sd.setSymbol(variant.getValue().toString());
@@ -75,7 +75,7 @@ public class Publisher {
         try {
             UaSubscription subscription = client.getClient().getSubscriptionManager().createSubscription(1000.0).get();
 
-            //::Program:Cube.Status.Parameter[3].Name <- the actual nodeId
+            //::Program:Cube.Status.Parameter[2].Value <- the actual nodeId
             NodeId nodeId = new NodeId(6, "::Program:Cube.Command.Parameter[2].Value");
             // subscribe to the Value attribute of the server's CurrentTime node
             ReadValueId readValueId = new ReadValueId(nodeId, AttributeId.Value.uid(), null, QualifiedName.NULL_VALUE);
