@@ -130,6 +130,6 @@ public class Publisher {
     private static void onSubscriptionValue(UaMonitoredItem item, DataValue value) {
         sd.setValue(Float.parseFloat(value.getValue().getValue().toString()));
         System.out.println(sd.getId() +" "+ sd.getName() +" "+ sd.getValue() + sd.getSymbol());
-        topic.publish(sd.getId() +" "+ sd.getName() +" "+ sd.getValue() +" "+ sd.getSymbol());
+        topic.publish(sd.getId() +":"+ sd.getName() +":"+ sd.getValue() +":"+ sd.getSymbol());
     }
 }

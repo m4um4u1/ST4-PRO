@@ -43,7 +43,7 @@ public class SensorData implements MessageListener, ISensorData {
 
     @Override
     public void onMessage(Message message) {
-        String[] split = message.getMessageObject().toString().split(" ");
+        String[] split = message.getMessageObject().toString().split(":");
         setId(Integer.parseInt(split[0]));
         setName(split[1]);
         setValue(Float.parseFloat(split[2]));
