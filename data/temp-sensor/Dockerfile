@@ -10,7 +10,7 @@ RUN mvn -f /home/app/pom.xml clean package
 # Package stage
 #
 FROM openjdk:8-jre-slim
-COPY --from=build /home/app/target/vibration-sensor-1.0-SNAPSHOT.jar /usr/local/lib/sensor.jar
+COPY --from=build /home/app/target/temp-sensor-1.0-SNAPSHOT.jar /usr/local/lib/sensor.jar
 COPY --from=build /home/app/target/lib /usr/local/lib/lib
 EXPOSE 5701
 ENTRYPOINT ["java","-jar","/usr/local/lib/sensor.jar"]
