@@ -12,7 +12,7 @@ export class ButtonServiceService {
   constructor(private http: HttpClient) {
   }
 
-  private buttonUrl = 'button/start';
+  private buttonUrl = 'http://127.0.0.1/api/command';
 
   postCommand(id): Observable<any>{
     return this.http.post(this.buttonUrl, id);
