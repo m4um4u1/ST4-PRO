@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Batch} from '../../models/batch.model';
+import {Batch} from '../../../models/batch.model';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
