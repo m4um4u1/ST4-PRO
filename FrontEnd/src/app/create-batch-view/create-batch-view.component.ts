@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {BatchService} from '../batch.service';
+import {BatchService} from '../services/batch.service';
 
 @Component({
   selector: 'app-create-batch-view',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ButtonServiceService} from '../button-service.service';
-import {BatchService} from '../batch.service';
+import {ButtonServiceService} from '../services/button-service.service';
+import {BatchService} from '../services/batch.service';
 
 @Component({
   selector: 'app-op-view',
