@@ -1,32 +1,26 @@
-import {Injectable, Input} from '@angular/core';
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import {Injectable} from '@angular/core';
+import {Batch} from '../../models/batch.model';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class BatchService {
 
+  private batch: Batch;
+  private batchUrl = 'http://127.0.0.1/api/batch';
 
-  private batchID;
-  private productAmount;
-  private machineSpeed;
+  constructor(private http: HttpClient) { }
 
-  private productType = new BehaviorSubject<string>();
-  currentProductType = this.productType.asObservable();
-
-
-
-  constructor() { }
-
-  changeProductType(message: string){
-    this.productType.next(message);
+  createBatch(id: number, type: string, speed: number, amount: number): void {
+    this.batch = new Batch(id, type, speed, amount);
   }
 
-  createBatchData = {
-    productType: this.productType,
-    batchID: this.batchID,
-    productAmount: this.productAmount,
-    machineSpeed: this.machineSpeed
-  };
+  sendBatch(): Observable<any> {
+    console.log(this.batch);
+    return this.http.post(this.batchUrl, this.batch);
+  }
 
 }

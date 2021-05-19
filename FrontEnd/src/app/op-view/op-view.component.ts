@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ButtonServiceService} from '../button-service.service';
+import {BatchService} from '../batch.service';
 
 @Component({
   selector: 'app-op-view',
@@ -8,13 +9,14 @@ import {ButtonServiceService} from '../button-service.service';
 })
 export class OpViewComponent implements OnInit {
 
-  constructor(private buttonService: ButtonServiceService) { }
+  constructor(private buttonService: ButtonServiceService, private batchService: BatchService) { }
 
   ngOnInit(): void {
   }
 
   start(): void {
     this.buttonService.postCommand(1).subscribe(data => {console.log(data); });
+    this.batchService.sendBatch();
   }
 
   stop(): void {

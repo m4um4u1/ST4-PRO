@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {BatchService} from '../batch.service';
 
 @Component({
   selector: 'app-create-batch-view',
@@ -7,9 +8,17 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class CreateBatchViewComponent implements OnInit {
 
-  constructor() { }
+  productType = 'Default';
+  batchId = 0;
+  productAmount = 0;
+  machineSpeed = 0;
+
+  constructor(private batchService: BatchService) { }
 
   ngOnInit(): void {
   }
 
+  insertBatch(): void {
+    this.batchService.createBatch(this.batchId, this.productType, this.machineSpeed, this.productAmount);
+  }
 }
