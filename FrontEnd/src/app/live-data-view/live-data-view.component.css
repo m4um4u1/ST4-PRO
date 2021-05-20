@@ -1,0 +1,27 @@
+.batchData{
+  background-color:	#131d34;
+  height: 250px;
+  border-radius: 6px;
+}
+
+.data-grid-container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #131d34;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.grid-data{
+  color: white;
+  background-color: #131d34;
+  border-bottom: 2px solid black;
+  padding: 20px;
+  text-align: center;
+}
+
+h2{
+  background-color: #131d34;
+  color: white;
+  margin: 2px;
+  text-align: left;
+}
