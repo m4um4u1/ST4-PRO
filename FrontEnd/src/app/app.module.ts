@@ -9,6 +9,7 @@ import { IngViewComponent } from './ing-view/ing-view.component';
 import { LiveDataViewComponent } from './live-data-view/live-data-view.component';
 import { ReportViewComponent } from './report-view/report-view.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { MtBarComponent } from './mt-bar/mt-bar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     CreateBatchViewComponent,
     IngViewComponent,
     LiveDataViewComponent,
-    ReportViewComponent
+    ReportViewComponent,
+    MtBarComponent
   ],
   imports: [
     BrowserModule,

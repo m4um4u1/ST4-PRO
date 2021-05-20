@@ -1,0 +1,31 @@
+.mt{
+  background-color:	#131d34;
+  min-height: 440px;
+  border-radius: 6px;
+  padding: 2px;
+  color: white;
+}
+
+p{
+  margin: 0px 0px 10px 20px;
+}
+.mtBar{
+  margin: 0px 0px 0px 35px;
+  background-color: black;
+  width: 40px;
+  border-radius: 13px;
+  padding: 3px;
+  height: 380px;
+}
+.mtBar>div{
+  display: flex;
+  background-color: #d0102b;
+  width: 35px;
+  height: 45%;
+  border-radius: 10px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+
+
