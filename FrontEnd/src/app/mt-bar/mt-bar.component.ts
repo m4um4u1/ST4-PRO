@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MtBarComponent implements OnInit {
 
+  mtProcent = 10;
+
   constructor() { }
 
   ngOnInit(): void {

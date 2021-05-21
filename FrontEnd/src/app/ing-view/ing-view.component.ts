@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IngViewComponent implements OnInit {
 
+  barleyProcent = 56;
+  maltProcent = 20;
+  hopsProcent = 12;
+  wheatProcent = 26;
+  yeastProcent = 80;
+
   constructor() { }
 
   ngOnInit(): void {
