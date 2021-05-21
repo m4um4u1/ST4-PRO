@@ -1,6 +1,5 @@
 .ing-container{
   background-color:	#131d34;
-  /*width: 800px;*/
   min-height: 440px;
   border-radius: 6px;
   padding: 2px;
@@ -24,6 +23,8 @@ p {
 
 .ing-container .progress-bar {
   color: black;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .progress {

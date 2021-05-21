@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {IngredientService} from '../services/ingredient.service';
 
 @Component({
   selector: 'app-ing-view',
@@ -13,9 +14,15 @@ export class IngViewComponent implements OnInit {
   wheatProcent = 26;
   yeastProcent = 80;
 
-  constructor() { }
+  constructor(private ingData: IngredientService) { }
+
+  private fetchIngData(): void{
+    this.ingData.getIngData();
+  }
 
   ngOnInit(): void {
+    setInterval(() => {
+      this.fetchIngData(); }, 3000);
   }
 
 }
