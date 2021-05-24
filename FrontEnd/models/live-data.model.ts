@@ -5,7 +5,7 @@ export class LiveData{
    batchId: number;
    amountToProduce: number;
    productsPerMinute: number;
-   produced: number;
+   producedAmount: number;
    acceptable: number;
-   defectedProducts: number;
+   defected: number;
 }

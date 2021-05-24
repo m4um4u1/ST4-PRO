@@ -1,6 +1,5 @@
 .op-container{
   background-color:	#131d34;
-  /*width: 250px;*/
   min-height: 440px;
   border-radius: 6px;
   padding: 2px;
@@ -16,7 +15,6 @@
   width: 100%;
   color: black;
   cursor: pointer;
-  /*display: block;*/
   margin: 20px 0px 0px 0px;
 }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LiveDataService} from '../services/live-data.service';
 
 @Component({
   selector: 'app-live-data-view',
@@ -7,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LiveDataViewComponent implements OnInit {
 
+  constructor(private liveData: LiveDataService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  private fetchData(): void{
+    this.liveData.fetchLiveData();
   }
 
+  ngOnInit(): void {
+    setInterval(() => {
+      this.fetchData(); }, 3000);
+    }
 }
