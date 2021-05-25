@@ -1,13 +1,15 @@
 .ing-container{
   background-color:	#131d34;
-  /*width: 800px;*/
   min-height: 440px;
   border-radius: 6px;
   padding: 2px;
-
+  color: white;
 }
 .ingredients{
   background-color: #131d34;
+  margin-left: 15px;
+  margin-right: 15px;
+  color: white;
 }
 
 .list-group{
@@ -15,95 +17,24 @@
 }
 .list-group-item{
   background-color: #131d34 !important;
-}
-
-.barleyBar{
-  background-color: black;
-  border-radius: 13px;
-  padding: 3px;
-}
-.barleyBar>div{
-  background-color: #ff8f5f;
-  width: 40%;
-  height: 16px;
-  border-radius: 10px;
-  color: black;
-  text-align: center;
-}
-.hopsBar{
-  background-color: black;
-  border-radius: 13px;
-  padding: 3px;
-}
-.hopsBar>div{
-  background-color: #ff8f5f;
-  width: 25%;
-  height: 16px;
-  border-radius: 10px;
-  color: black;
-  text-align: center;
-}
-.maltBar{
-  background-color: black;
-  border-radius: 13px;
-  padding: 3px;
-}
-.maltBar>div{
-  background-color: #ff8f5f;
-  width: 95%;
-  height: 16px;
-  border-radius: 10px;
-  color: black;
-  text-align: center;
-}
-.wheatBar{
-  background-color: black;
-  border-radius: 13px;
-  padding: 3px;
-}
-.wheatBar>div{
-  background-color: #ff8f5f;
-  width: 95%;
-  height: 16px;
-  border-radius: 10px;
-  color: black;
-  text-align: center;
-}
-.yeastBar{
-  background-color: black;
-  border-radius: 13px;
-  padding: 3px;
-}
-.yeastBar>div{
-  background-color: #ff8f5f;
-  width: 57%;
-  height: 16px;
-  border-radius: 10px;
-  color: black;
-  text-align: center;
-}
-.mtBar{
-  background-color: black;
-  border-radius: 13px;
-  padding: 3px;
-}
-.mtBar>div{
-  background-color: #d0102b;
-  width: 23%;
-  height: 16px;
-  border-radius: 10px;
-  color: black;
-  text-align: center;
-}
-
-header h2{
-  background-color: #131d34;
   color: white;
-  text-align: left;
 }
 
-p{
-  background-color: #131d34;
-  color: white;
+p {
   margin-bottom: 3px;
 }
+
+.ing-container .progress-bar {
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.progress {
+  height: 25px !important;
+}
+
+
+
+
+

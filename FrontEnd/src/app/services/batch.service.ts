@@ -10,7 +10,7 @@ import {Observable} from 'rxjs';
 export class BatchService {
 
   private batch: Batch;
-  private batchUrl = 'http://127.0.0.1/api/batch';
+  private batchUrl = 'http://127.0.0.1/api/batch/postbatch';
 
   constructor(private http: HttpClient) { }
 

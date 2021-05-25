@@ -7,38 +7,37 @@
     <ul class="list-group">
       <li class="list-group-item">
         <p>Barley:</p>
-        <div class="barleyBar">
-          <div>40%</div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: {{ barleyProcent }}%"
+               aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> {{barleyProcent}}%</div>
         </div>
       </li>
       <li class="list-group-item">
         <p>Hops:</p>
-        <div class="hopsBar">
-          <div>25%</div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: {{ hopsProcent }}%"
+               aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">{{hopsProcent}}%</div>
         </div>
       </li>
       <li class="list-group-item">
         <p>Malt:</p>
-        <div class="maltBar">
-          <div>95%</div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: {{ maltProcent }}%"
+               aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">{{maltProcent}}%</div>
         </div>
       </li>
       <li class="list-group-item">
         <p>Wheat:</p>
-        <div class="wheatBar">
-          <div>95%</div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: {{ wheatProcent }}%"
+               aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">{{wheatProcent}}%</div>
         </div>
       </li>
       <li class="list-group-item">
         <p>Yeast:</p>
-        <div class="yeastBar">
-          <div>57%</div>
-        </div>
-      </li>
-      <li class="list-group-item">
-        <p>MT Bar:</p>
-        <div class="mtBar">
-          <div>23%</div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: {{ yeastProcent }}%"
+               aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">{{yeastProcent}}%</div>
         </div>
       </li>
     </ul>
