@@ -1,5 +1,5 @@
 * {
-  background-color: #000000;
+  background-color: #24305E;
   box-sizing: border-box;
 }
 
@@ -12,7 +12,7 @@ header {
 
 }
 h1{
-  background-color: #131d34;
+  background-color: #374785;
   color: white;
   padding: 5px;
   text-align: center;
@@ -22,7 +22,7 @@ h1{
 }
 
 p{
-  background-color: #131d34;
+  background-color: #374785;
   color: white;
   margin-bottom: 3px;
 }
