@@ -7,8 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="humidity-sensor" />
-        <module name="Backend" />
         <module name="Temperature" />
+        <module name="Backend" />
         <module name="Vibration" />
         <module name="vibration-sensor" />
         <module name="Humidity" />
@@ -17,11 +17,11 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Backend" target="16" />
+      <module name="Backend" target="1.5" />
       <module name="Common" target="16" />
       <module name="Core" target="11" />
       <module name="Humidity" target="16" />
-      <module name="humidity-sensor" target="15" />
+      <module name="humidity-sensor" target="1.5" />
       <module name="OPC_Common" target="11" />
       <module name="OPC_Control" target="1.8" />
       <module name="OPC_Core" target="11" />
@@ -29,7 +29,7 @@
       <module name="temp-sensor" target="15" />
       <module name="Temperature" target="16" />
       <module name="Vibration" target="16" />
-      <module name="vibration-sensor" target="15" />
+      <module name="vibration-sensor" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
