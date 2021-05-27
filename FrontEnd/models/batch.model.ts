@@ -16,4 +16,5 @@ export class Batch {
     this.productAmount = productAmount;
   }
 
+
 }
