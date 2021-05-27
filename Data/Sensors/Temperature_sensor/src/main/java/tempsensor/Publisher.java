@@ -27,7 +27,7 @@ import static org.eclipse.milo.opcua.stack.core.types.builtin.unsigned.Unsigned.
 public class Publisher {
 
     private HazelcastInstance hz;
-    private static final String TOPIC_NAME = "temp_sensor";
+    private static final String TOPIC_NAME = "temperature_sensor";
     private static ITopic topic = null;
     private Client client;
     private CompletableFuture<OpcUaClient> future;

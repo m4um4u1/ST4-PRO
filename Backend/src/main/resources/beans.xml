@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="humidity" class="dk.sdu.mmmi.semproject.Humidity"/>
+    <bean id="vibration" class="dk.sdu.mmmi.semproject.Vibration"/>
+    <bean id="temperature" class="dk.sdu.mmmi.semproject.Temperature"/>
+    <bean id="sensorHandler" class="dk.sdu.mmmi.semproject.backend.component.SensorHandler">
+        <property name="temperatureReader" ref="temperature"/>
+        <property name="humidityReader" ref="humidity"/>
+        <property name="vibrationReader" ref="vibration"/>
+
+    </bean>
+</beans>

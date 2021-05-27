@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Backend/Backend.iml" filepath="$PROJECT_DIR$/Backend/Backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Common/Common.iml" filepath="$PROJECT_DIR$/Common/Common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Humidity/Humidity.iml" filepath="$PROJECT_DIR$/Humidity/Humidity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Temperature/Temperature.iml" filepath="$PROJECT_DIR$/Temperature/Temperature.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vibration/Vibration.iml" filepath="$PROJECT_DIR$/Vibration/Vibration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/data/Sensors/Humidity_sensor/humidity-sensor.iml" filepath="$PROJECT_DIR$/data/Sensors/Humidity_sensor/humidity-sensor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/data/Sensors/Temperature_sensor/temp-sensor.iml" filepath="$PROJECT_DIR$/data/Sensors/Temperature_sensor/temp-sensor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/data/Sensors/Vibration_sensor/vibration-sensor.iml" filepath="$PROJECT_DIR$/data/Sensors/Vibration_sensor/vibration-sensor.iml" />
+    </modules>
+  </component>
+</project>
