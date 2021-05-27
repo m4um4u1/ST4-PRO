@@ -1,0 +1,18 @@
+.batchReport{
+  background-color:	#374785;
+  height: 245px;
+  border-radius: 6px;
+}
+.batchReport>table{
+  height: 20px;
+  border-radius: 6px;
+  color: white;
+  text-align: left;
+}
+
+h2{
+  background-color: #374785;
+  color: white;
+  margin: 2px;
+  text-align: left;
+}

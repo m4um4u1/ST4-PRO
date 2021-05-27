@@ -1,0 +1,30 @@
+.op-container{
+  background-color:	#374785;
+  min-height: 440px;
+  border-radius: 6px;
+  padding: 2px;
+}
+
+.operations{
+  background-color: #374785;
+}
+
+.operations button{
+  background-color: #2E9CCA;
+  border: 1px solid #24305E;
+  width: 100%;
+  color: black;
+  cursor: pointer;
+  margin: 20px 0px 0px 0px;
+  font-weight: bold;
+}
+
+.operations button:hover{
+  background-color: #125699;
+}
+
+header h2{
+  background-color: #374785;
+  color: white;
+  text-align: left;
+}
