@@ -1,11 +1,11 @@
-export class LiveData{
+export interface LiveData{
    temperature: number;
    humidity: number;
    vibration: number;
-   batchId: number;
-   amountToProduce: number;
-   productsPerMinute: number;
-   producedAmount: number;
-   acceptable: number;
-   defected: number;
+   batchID: number;
+   amount: number;
+   machSpeed: number;
+   produced: number;
+   accepted: number;
+   defective: number;
 }

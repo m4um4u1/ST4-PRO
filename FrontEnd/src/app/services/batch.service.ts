@@ -14,10 +14,6 @@ export class BatchService {
 
   constructor(private http: HttpClient) { }
 
-  createBatch(id: number, type: string, speed: number, amount: number): void {
-    this.batch = new Batch(id, type, speed, amount);
-  }
-
   sendBatch(): Observable<any> {
     console.log(this.batch);
     return this.http.post(this.batchUrl, this.batch);

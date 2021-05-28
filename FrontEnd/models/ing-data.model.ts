@@ -1,4 +1,4 @@
-export class IngData{
+export interface IngData{
   barley: number;
   hops: number;
   wheat: number;
