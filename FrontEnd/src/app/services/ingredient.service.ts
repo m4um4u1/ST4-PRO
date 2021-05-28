@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {IngData} from '../../../models/ing-data.model';
+import {IngData} from '../models/ing-data.model';
+import {Observable} from 'rxjs';
 
 
 @Injectable({
@@ -8,13 +9,11 @@ import {IngData} from '../../../models/ing-data.model';
 })
 export class IngredientService {
 
-  ingUrl = 'http://127.0.0.1/api/get/IngData';
+  ingUrl = 'http://127.0.0.1:8080/api/ingredients/get';
 
   constructor(private http: HttpClient) {}
 
-  getIngData(): void{
-    this.http.get<IngData>(this.ingUrl).subscribe(data => {
-      console.log(data);
-    });
+  getIngData(): Observable<IngData> {
+     return this.http.get<IngData>(this.ingUrl);
   }
 }

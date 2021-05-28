@@ -1,13 +1,10 @@
 package dk.sdu.mmmi.semproject.backend.controller;
 
-
 import dk.sdu.mmmi.semproject.backend.model.Batch;
 import dk.sdu.mmmi.semproject.backend.service.BatchService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/batch")
@@ -20,12 +17,11 @@ public class BatchController {
 
     @PostMapping("/post")
     public ResponseEntity<Batch> createBatch(@RequestBody Batch batch) {
-
-        Batch b = batch;
-        bs.setMachSpeed(b.getMachSpeed());
-        bs.setProductType(b.getProductType());
-        bs.setBatchID(b.getId());
-        bs.setProductAmount(b.getAmount());
-        return new ResponseEntity<>(b, HttpStatus.CREATED);
+        System.out.println(batch);
+        bs.setMachSpeed(batch.getMachSpeed());
+        bs.setProductType(batch.getProductType());
+        bs.setBatchID(batch.getId());
+        bs.setProductAmount(batch.getAmount());
+        return new ResponseEntity<>(batch, HttpStatus.CREATED);
     }
 }

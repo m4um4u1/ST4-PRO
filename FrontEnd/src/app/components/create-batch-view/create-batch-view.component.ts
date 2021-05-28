@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {BatchService} from '../services/batch.service';
+import {BatchService} from '../../services/batch.service';
+import {Batch} from '../../models/batch.interface';
+import {BatchModel} from '../../models/batch.model';
 
 @Component({
   selector: 'app-create-batch-view',
@@ -8,17 +10,19 @@ import {BatchService} from '../services/batch.service';
 })
 export class CreateBatchViewComponent implements OnInit {
 
-  productType = 'Default';
+  productType = 0;
   batchId = 0;
   productAmount = 0;
   machineSpeed = 0;
 
+  public batch: Batch;
   constructor(private batchService: BatchService) { }
 
   ngOnInit(): void {
   }
 
   insertBatch(): void {
-    this.batchService.createBatch(this.batchId, this.productType, this.machineSpeed, this.productAmount);
+    this.batch = new BatchModel(this.productAmount, this.batchId, this.machineSpeed, this.productType);
+    this.batchService.createBatch(this.batch);
   }
 }
