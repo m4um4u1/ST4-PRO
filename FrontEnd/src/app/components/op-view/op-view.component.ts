@@ -16,7 +16,6 @@ export class OpViewComponent implements OnInit {
 
   start(): void {
     this.buttonService.postCommand(2).subscribe(data => {console.log(data); });
-    this.batchService.sendBatch();
   }
 
   stop(): void {

@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {BatchService} from '../../services/batch.service';
 import {Batch} from '../../models/batch.interface';
-import {BatchModel} from '../../models/batch.model';
+import {HttpErrorResponse} from '@angular/common/http';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-create-batch-view',
@@ -21,8 +22,17 @@ export class CreateBatchViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  insertBatch(): void {
-    this.batch = new BatchModel(this.productAmount, this.batchId, this.machineSpeed, this.productType);
-    this.batchService.createBatch(this.batch);
+  public onAddBatch(addForm: NgForm): void {
+    console.log(addForm.value);
+    this.batchService.sendBatch(addForm.value).subscribe(
+      (response: Batch) => {
+        console.log(response);
+        addForm.reset();
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+        addForm.reset();
+      }
+    );
   }
 }

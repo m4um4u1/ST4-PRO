@@ -10,14 +10,9 @@ import {Observable} from 'rxjs';
 export class BatchService {
 
   private batchUrl = 'http://127.0.0.1:8080/api/batch/post';
-  private batch: Batch;
   constructor(private http: HttpClient) { }
 
-  sendBatch(): Observable<Batch> {
-    return this.http.post<Batch>(this.batchUrl, this.batch);
-  }
-
-  createBatch(batch: Batch): void {
-    this.batch = batch;
+  sendBatch(batch: Batch): Observable<Batch> {
+    return this.http.post<Batch>(this.batchUrl, batch);
   }
 }

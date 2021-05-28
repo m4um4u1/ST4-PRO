@@ -16,19 +16,16 @@ public class SensorHandler {
     public void createTemp() {
         temp = new Client();
         temperatureReader.start(temp.getHz());
-        System.out.println(temperatureReader.getSd().getName());
     }
 
     public void createHum() {
         hum = new Client();
         humidityReader.start(hum.getHz());
-        System.out.println(humidityReader.getSd().getName());
     }
 
     public void createVib() {
         vib = new Client();
         vibrationReader.start(vib.getHz());
-        System.out.println(vibrationReader.getSd().getName());
     }
 
     public void stopSensors() {

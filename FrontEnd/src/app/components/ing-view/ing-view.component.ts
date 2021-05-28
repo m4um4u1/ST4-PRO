@@ -16,18 +16,18 @@ export class IngViewComponent implements OnInit {
 
   private fetchIngData(): void{
    this.ingDataService.getIngData().subscribe((response: IngData) => {
-     response.malt = (response.malt / 35000) * 100;
-     response.hops = (response.hops / 35000) * 100;
-     response.yeast = (response.yeast / 35000) * 100;
-     response.barley = (response.barley / 35000) * 100;
-     response. wheat = (response.wheat / 35000) * 100;
+     response.malt = Math.round((response.malt / 35000) * 100);
+     response.hops = Math.round((response.hops / 35000) * 100);
+     response.yeast = Math.round((response.yeast / 35000) * 100);
+     response.barley = Math.round((response.barley / 35000) * 100);
+     response. wheat = Math.round((response.wheat / 35000) * 100);
      this.data = response;
    }, (error: HttpErrorResponse) => { alert(error.message); });
   }
 
   ngOnInit(): void {
     setInterval(() => {
-      this.fetchIngData(); }, 10000);
+      this.fetchIngData(); }, 3000);
   }
 
 }
