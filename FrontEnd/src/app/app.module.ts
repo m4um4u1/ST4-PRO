@@ -10,6 +10,13 @@ import { LiveDataViewComponent } from './components/live-data-view/live-data-vie
 import { ReportViewComponent } from './components/report-view/report-view.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MtBarComponent } from './components/mt-bar/mt-bar.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import {RouterModule} from '@angular/router';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ReportComponent } from './pages/report/report.component';
+import {CommonModule} from '@angular/common';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +26,20 @@ import { MtBarComponent } from './components/mt-bar/mt-bar.component';
     IngViewComponent,
     LiveDataViewComponent,
     ReportViewComponent,
-    MtBarComponent
+    MtBarComponent,
+    DashboardComponent,
+    NavbarComponent,
+    ReportComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
+    RouterModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -27,13 +27,13 @@ export class CreateBatchViewComponent implements OnInit {
       setInterval(() => {
         this.stateService.getStateData().subscribe((response: State) => {
           this.state = response;
-        })
-        if(this.state.state == 4){
+        });
+        if (this.state?.state === 4){
           this.isIdle = true;
-          console.log(this.isIdle)
+          console.log(this.isIdle);
         } else {
           this.isIdle = false;
-          console.log(this.isIdle)
+          console.log(this.isIdle);
         }
       }, 5000);
 
