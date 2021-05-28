@@ -21,6 +21,6 @@
         <input type="text" id="pAmount" class="form-control" ngModel name="amount" [(ngModel)]="productAmount">
       </div>
     </form>
-    <button class="btn btn-danger" type="submit" style="margin-top: 10px" (click)="onAddBatch(addForm)">Select</button>
+    <button class="btn btn-danger" type="submit" [disabled]="!isIdle" style="margin-top: 10px" (click)="onAddBatch(addForm)">Select</button>
   </div>
 </div>
