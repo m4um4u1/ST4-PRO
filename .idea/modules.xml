@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/Common/Common.iml" filepath="$PROJECT_DIR$/Common/Common.iml" />
       <module fileurl="file://$PROJECT_DIR$/FrontEnd/FrontEnd.iml" filepath="$PROJECT_DIR$/FrontEnd/FrontEnd.iml" />
       <module fileurl="file://$PROJECT_DIR$/Humidity/Humidity.iml" filepath="$PROJECT_DIR$/Humidity/Humidity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMongoImplementation/SpringMongoImplementation.iml" filepath="$PROJECT_DIR$/SpringMongoImplementation/SpringMongoImplementation.iml" />
       <module fileurl="file://$PROJECT_DIR$/Temperature/Temperature.iml" filepath="$PROJECT_DIR$/Temperature/Temperature.iml" />
       <module fileurl="file://$PROJECT_DIR$/Vibration/Vibration.iml" filepath="$PROJECT_DIR$/Vibration/Vibration.iml" />
       <module fileurl="file://$PROJECT_DIR$/Data/Sensors/Humidity_sensor/humidity-sensor.iml" filepath="$PROJECT_DIR$/Data/Sensors/Humidity_sensor/humidity-sensor.iml" />

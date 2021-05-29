@@ -11,13 +11,13 @@
       <div class="form-group">
         <label for="pType">ProductType:</label>
         <select class="form-select" aria-label="Default select example" id="pType" ngModel name="productType" [(ngModel)]="productType">
-          <option [ngValue]="null" [disabled]="true" >Select product type</option>
-          <option value="0">Pilsner</option>
-          <option value="1">Wheat</option>
-          <option value="2">IPA</option>
-          <option value="3">Stout</option>
-          <option value="4">Ale</option>
-          <option value="5">Alcohol Free</option>
+          <option [ngValue]="undefined" [disabled]="true" >Select product type</option>
+          <option [ngValue]="0">Pilsner</option>
+          <option [ngValue]="1">Wheat</option>
+          <option [ngValue]="2">IPA</option>
+          <option [ngValue]="3">Stout</option>
+          <option [ngValue]="4">Ale</option>
+          <option [ngValue]="5">Alcohol Free</option>
         </select>
       </div>
       <div class="form-group">
@@ -30,5 +30,7 @@
       </div>
     </form>
     <button class="btn btn-danger" type="submit" [disabled]="!isIdle" style="margin-top: 10px" (click)="onAddBatch(addForm)">Select</button>
+    <br>
+    <button class="btn btn-danger" type="submit" [disabled]="!isIdle" style="margin-top: 10px" (click)="onGenerateReport()">Generate Batch Report</button>
   </div>
 </div>

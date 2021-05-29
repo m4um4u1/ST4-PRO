@@ -3,7 +3,6 @@ package dk.sdu.mmmi.semproject;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.topic.ITopic;
 import dk.sdu.mmmi.semproject.data.SensorData;
-import dk.sdu.mmmi.semproject.data.Sensors;
 import dk.sdu.mmmi.semproject.services.ISensorReader;
 
 public class Temperature implements ISensorReader {

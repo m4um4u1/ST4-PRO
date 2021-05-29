@@ -5,6 +5,9 @@ import {HttpErrorResponse} from '@angular/common/http';
 import {NgForm} from '@angular/forms';
 import {StateService} from '../../services/state.service';
 import {State} from '../../models/state.model';
+import {BatchReportService} from "../../services/batch-report.service";
+import {LiveData} from "../../models/live-data.model";
+import {LiveDataService} from "../../services/live-data.service";
 
 @Component({
   selector: 'app-create-batch-view',
@@ -14,15 +17,17 @@ import {State} from '../../models/state.model';
 export class CreateBatchViewComponent implements OnInit {
 
 
-  productType = null;
+  productType: number;
   batchId: number;
   productAmount: number;
   machineSpeed: number;
   isIdle = false;
+  isComplete = false;
   state: State;
+  liveData: LiveData;
 
   public batch: Batch;
-  constructor(private batchService: BatchService, private stateService: StateService) { }
+  constructor(private batchService: BatchService, private stateService: StateService, private batchReportService: BatchReportService, private liveDataService: LiveDataService) { }
 
   ngOnInit(): void {
       setInterval(() => {
@@ -31,17 +36,29 @@ export class CreateBatchViewComponent implements OnInit {
         });
         if (this.state?.state === 4){
           this.isIdle = true;
-          console.log(this.isIdle);
+        } else if (this.state?.state === 17){
+          this.isComplete = true;
         } else {
           this.isIdle = false;
-          console.log(this.isIdle);
         }
       }, 5000);
 
   }
 
+  public onGenerateReport(){
+    this.liveData = this.liveDataService.fetchLiveData()
+
+
+    this.batchReportService.createBatchReport(liveData).subscribe(
+      (response: LiveData) => {
+        console.log(response);
+      }, (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    )
+  }
+
   public onAddBatch(addForm: NgForm): void {
-    console.log(addForm.value);
     this.batchService.sendBatch(addForm.value).subscribe(
       (response: Batch) => {
         console.log(response);

@@ -9,6 +9,7 @@
         <module name="humidity-sensor" />
         <module name="Backend" />
         <module name="Temperature" />
+        <module name="SpringMongoImplementation" />
         <module name="Vibration" />
         <module name="vibration-sensor" />
         <module name="Humidity" />
@@ -26,6 +27,7 @@
       <module name="OPC_Control" target="1.8" />
       <module name="OPC_Core" target="11" />
       <module name="OPC_Reader" target="16" />
+      <module name="SpringMongoImplementation" target="1.8" />
       <module name="temp-sensor" target="15" />
       <module name="Temperature" target="16" />
       <module name="Vibration" target="16" />
@@ -39,6 +41,7 @@
       <module name="OPC_Control" options="-parameters" />
       <module name="OPC_Core" options="-parameters" />
       <module name="OPC_Reader" options="-parameters" />
+      <module name="SpringMongoImplementation" options="-parameters" />
     </option>
   </component>
 </project>

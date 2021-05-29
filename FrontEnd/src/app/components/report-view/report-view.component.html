@@ -18,7 +18,7 @@
 <div class="card" *ngFor="let batchReport of batchReports">
   <div class="card-body">
     <h3 class="card-title">Batch Report</h3>
-    <p class="card-text" style="font-weight: bold">Report number: {{batchReport?.batchID}}</p>
+    <p class="card-text" style="font-weight: bold">Report number: {{batchReport?.batchId}}</p>
     <table class="table">
       <thead>
       <tr>
@@ -29,7 +29,7 @@
       <tbody>
       <tr>
         <th scope="row">Batch ID</th>
-        <td>{{batchReport?.batchID}}</td>
+        <td>{{batchReport?.batchId}}</td>
       </tr>
       <tr>
         <th scope="row">Batch Date</th>
@@ -40,20 +40,16 @@
         <td colspan="2">{{batchReport?.productType}}</td>
       </tr>
       <tr>
-        <th scope="row">Machine Speed</th>
-        <td colspan="2">{{batchReport?.machSpeed}}</td>
-      </tr>
-      <tr>
         <th scope="row">Acceptable Amount Produced</th>
-        <td colspan="2">{{batchReport?.accepted}}</td>
+        <td colspan="2">{{batchReport?.acceptedAmount}}</td>
       </tr>
       <tr>
         <th scope="row">Defect Amount Produced</th>
-        <td colspan="2">{{batchReport?.produced}}</td>
+        <td colspan="2">{{batchReport?.defectAmount}}</td>
       </tr>
       <tr>
         <th scope="row">Total Amount Produced</th>
-        <td colspan="2">{{batchReport?.amount}}</td>
+        <td colspan="2">{{batchReport?.totalAmount}}</td>
       </tr>
       <tr>
         <th scope="row">Temperatures</th>
