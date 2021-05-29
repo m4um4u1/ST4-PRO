@@ -15,7 +15,7 @@ export class MtBarComponent implements OnInit {
 
   private fetchMtData(): void{
     this.mtData.getMtData().subscribe((response: Maintenance) => {
-     response.maintenance = Math.round((response.maintenance / 35000) * 100);
+     response.maintenance = Math.round((response.maintenance / 65535) * 100);
      this.data = response;
     });
   }

@@ -1,33 +1,70 @@
-<div class="batchReport">
-  <h2>Batch report:</h2>
-  <table class="table">
-    <tr>
-      <th>Batch ID:</th>
-      <td>###</td>
-    </tr>
-    <tr>
-      <th>Product type:</th>
-      <td>###</td>
-    </tr>
-    <tr>
-      <th>Total amount of products:</th>
-      <td>###</td>
-    </tr>
-    <tr>
-      <th>Amount of defective products:</th>
-      <td>###</td>
-    </tr>
-    <tr>
-      <th>Amount of accepted products:</th>
-      <td>###</td>
-    </tr>
-    <tr>
-      <th>Temperature log:</th>
-      <td>###</td>
-    </tr>
-    <tr>
-      <th>Humidity log:</th>
-      <td>###</td>
-    </tr>
-  </table>
+<div class="container">
+  <div class="row">
+<div class="card text-center">
+  <h3 class="card-title">Batch Reports</h3>
+  <div class="card-body">
+  <form #addForm = "ngForm" (ngSubmit)="searchBatchReport(addForm)">
+    <div class="form-group">
+      <label for="batchId">Search for batch report: </label>
+      <input type="text" id="batchId" class="form-control" ngModel name="Id" [(ngModel)]="id">
+    </div>
+  </form>
+  <a class="btn btn-danger" type="submit" style="margin-top: 10px; width: 100px" (click)="searchBatchReport(addForm)">Search</a>
 </div>
+</div>
+  </div>
+</div>
+
+<div class="card" *ngFor="let batchReport of batchReports">
+  <div class="card-body">
+    <h3 class="card-title">Batch Report</h3>
+    <p class="card-text" style="font-weight: bold">Report number: {{batchReport?.batchID}}</p>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Variable</th>
+        <th scope="col">Value</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th scope="row">Batch ID</th>
+        <td>{{batchReport?.batchID}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Batch Date</th>
+        <td>{{batchReport?.date}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Product Type</th>
+        <td colspan="2">{{batchReport?.productType}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Machine Speed</th>
+        <td colspan="2">{{batchReport?.machSpeed}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Acceptable Amount Produced</th>
+        <td colspan="2">{{batchReport?.accepted}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Defect Amount Produced</th>
+        <td colspan="2">{{batchReport?.produced}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Total Amount Produced</th>
+        <td colspan="2">{{batchReport?.amount}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Temperatures</th>
+        <td colspan="2">{{batchReport?.temperature}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Humidity</th>
+        <td colspan="2">{{batchReport?.humidity}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

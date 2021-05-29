@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {BatchService} from '../../services/batch.service';
-import {Batch} from '../../models/batch.interface';
+import {Batch} from '../../models/batch.model';
 import {HttpErrorResponse} from '@angular/common/http';
 import {NgForm} from '@angular/forms';
-import {StateService} from "../../services/state.service";
-import {State} from "../../models/state.model";
+import {StateService} from '../../services/state.service';
+import {State} from '../../models/state.model';
 
 @Component({
   selector: 'app-create-batch-view',

@@ -1,5 +1,6 @@
 package dk.sdu.mmmi.semproject.backend.controller;
 
+import dk.sdu.mmmi.semproject.backend.component.LiveHandler;
 import dk.sdu.mmmi.semproject.backend.model.LiveData;
 import dk.sdu.mmmi.semproject.backend.service.LiveService;
 import org.springframework.beans.factory.annotation.Autowired;
