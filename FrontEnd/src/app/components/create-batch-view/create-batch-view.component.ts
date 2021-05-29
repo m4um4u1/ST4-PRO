@@ -5,9 +5,10 @@ import {HttpErrorResponse} from '@angular/common/http';
 import {NgForm} from '@angular/forms';
 import {StateService} from '../../services/state.service';
 import {State} from '../../models/state.model';
-import {BatchReportService} from "../../services/batch-report.service";
-import {LiveData} from "../../models/live-data.model";
-import {LiveDataService} from "../../services/live-data.service";
+import {BatchReportService} from '../../services/batch-report.service';
+import {LiveData} from '../../models/live-data.model';
+import {LiveDataService} from '../../services/live-data.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-create-batch-view',
@@ -27,7 +28,9 @@ export class CreateBatchViewComponent implements OnInit {
   liveData: LiveData;
 
   public batch: Batch;
-  constructor(private batchService: BatchService, private stateService: StateService, private batchReportService: BatchReportService, private liveDataService: LiveDataService) { }
+
+  constructor(private batchService: BatchService, private stateService: StateService, private batchReportService: BatchReportService,
+              private liveDataService: LiveDataService) { }
 
   ngOnInit(): void {
       setInterval(() => {
@@ -40,22 +43,24 @@ export class CreateBatchViewComponent implements OnInit {
           this.isComplete = true;
         } else {
           this.isIdle = false;
+          this.isComplete = false;
         }
       }, 5000);
 
   }
 
-  public onGenerateReport(){
-    this.liveData = this.liveDataService.fetchLiveData()
-
-
-    this.batchReportService.createBatchReport(liveData).subscribe(
-      (response: LiveData) => {
+  public onGenerateReport(): void {
+    this.isComplete = false;
+    this.liveDataService.fetchLiveData().subscribe((response) => {
+      this.liveData = response;
+    });
+    this.batchReportService.createBatchReport(this.liveData).subscribe(
+      (response) => {
         console.log(response);
       }, (error: HttpErrorResponse) => {
         alert(error.message);
       }
-    )
+    );
   }
 
   public onAddBatch(addForm: NgForm): void {

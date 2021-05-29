@@ -31,6 +31,6 @@
     </form>
     <button class="btn btn-danger" type="submit" [disabled]="!isIdle" style="margin-top: 10px" (click)="onAddBatch(addForm)">Select</button>
     <br>
-    <button class="btn btn-danger" type="submit" [disabled]="!isIdle" style="margin-top: 10px" (click)="onGenerateReport()">Generate Batch Report</button>
+    <button class="btn btn-danger" type="submit" [disabled]="!isComplete" style="margin-top: 10px" (click)="onGenerateReport()">Generate Batch Report</button>
   </div>
 </div>

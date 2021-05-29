@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {BatchReport} from '../models/batch-report.model';
-import {Batch} from "../models/batch.model";
-import {LiveData} from "../models/live-data.model";
+import {LiveData} from '../models/live-data.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +17,7 @@ export class BatchReportService {
     return this.http.get<BatchReport[]>(`${this.reportUrl}/all`);
   }
 
-  findBatchReport(id: string): Observable<BatchReport> {
+  findBatchReport(id: number): Observable<BatchReport> {
     return this.http.get<BatchReport>(`${this.reportUrl}/find/${id}`);
   }
 

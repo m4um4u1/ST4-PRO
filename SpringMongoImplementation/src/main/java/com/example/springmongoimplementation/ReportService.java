@@ -1,10 +1,6 @@
 package com.example.springmongoimplementation;
 
-import dk.sdu.mmmi.semproject.backend.component.UaHandler;
-import org.eclipse.milo.opcua.stack.core.types.builtin.DataValue;
-import org.eclipse.milo.opcua.stack.core.types.builtin.NodeId;
-import org.eclipse.milo.opcua.stack.core.types.builtin.Variant;
-import org.eclipse.milo.opcua.stack.core.types.enumerated.TimestampsToReturn;
+
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
@@ -38,8 +34,6 @@ public class ReportService {
         return rP.findById(batchId)
                 .orElseThrow(() -> new ResourceNotFoundException());
     }
-
-
 
 
 }
