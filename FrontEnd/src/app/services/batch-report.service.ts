@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {IngData} from '../models/ing-data.model';
 import {BatchReport} from '../models/batch-report.model';
 
 @Injectable({
