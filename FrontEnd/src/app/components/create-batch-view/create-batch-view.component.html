@@ -6,19 +6,27 @@
     <form #addForm = "ngForm" (ngSubmit)="onAddBatch(addForm)">
       <div class="form-group">
         <label for="bID">Batch ID:</label>
-        <input type="text" id="bID" class="form-control" ngModel name="id" [(ngModel)]="batchId">
+        <input type="text" id="bID" class="form-control" ngModel name="id" [(ngModel)]="batchId" placeholder="Insert Batch ID">
       </div>
       <div class="form-group">
         <label for="pType">ProductType:</label>
-        <input type="text" id="pType" class="form-control" ngModel name="productType" [(ngModel)]="productType">
+        <select class="form-select" aria-label="Default select example" id="pType" ngModel name="productType" [(ngModel)]="productType">
+          <option [ngValue]="null" [disabled]="true" >Select product type</option>
+          <option value="0">Pilsner</option>
+          <option value="1">Wheat</option>
+          <option value="2">IPA</option>
+          <option value="3">Stout</option>
+          <option value="4">Ale</option>
+          <option value="5">Alcohol Free</option>
+        </select>
       </div>
       <div class="form-group">
         <label for="mSpeed">Machine speed:</label>
-        <input type="text" id="mSpeed" class="form-control" ngModel name="machSpeed" [(ngModel)]="machineSpeed">
+        <input type="text" id="mSpeed" class="form-control" ngModel name="machSpeed" [(ngModel)]="machineSpeed" placeholder="Insert machine speed">
       </div>
       <div class="form-group">
         <label for="pAmount">Product amount:</label>
-        <input type="text" id="pAmount" class="form-control" ngModel name="amount" [(ngModel)]="productAmount">
+        <input type="text" id="pAmount" class="form-control" ngModel name="amount" [(ngModel)]="productAmount" placeholder="Insert product amount">
       </div>
     </form>
     <button class="btn btn-danger" type="submit" [disabled]="!isIdle" style="margin-top: 10px" (click)="onAddBatch(addForm)">Select</button>

@@ -22,7 +22,7 @@ export class IngViewComponent implements OnInit {
      response.barley = Math.round((response.barley / 35000) * 100);
      response. wheat = Math.round((response.wheat / 35000) * 100);
      this.data = response;
-   }, (error: HttpErrorResponse) => { alert(error.message); });
+   }, (error: HttpErrorResponse) => { console.log(error.message); });
   }
 
   ngOnInit(): void {

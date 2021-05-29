@@ -16,7 +16,7 @@ export class LiveDataViewComponent implements OnInit {
   private fetchData(): void{
     this.liveData.fetchLiveData().subscribe((response: LiveData) => {
       this.data = response;
-    }, (error: HttpErrorResponse) => { alert(error.message); });
+    }, (error: HttpErrorResponse) => { console.log(error.message); });
   }
 
   ngOnInit(): void {

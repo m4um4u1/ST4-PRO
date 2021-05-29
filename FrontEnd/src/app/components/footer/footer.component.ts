@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  about = 'This MES has been implemented with a lot of tears coffee, and bad gay jokes.';
   constructor() { }
 
   ngOnInit(): void {

@@ -13,10 +13,11 @@ import {State} from '../../models/state.model';
 })
 export class CreateBatchViewComponent implements OnInit {
 
-  productType = 0;
-  batchId = 0;
-  productAmount = 0;
-  machineSpeed = 0;
+
+  productType = null;
+  batchId: number;
+  productAmount: number;
+  machineSpeed: number;
   isIdle = false;
   state: State;
 
