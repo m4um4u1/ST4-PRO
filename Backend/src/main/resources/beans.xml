@@ -10,6 +10,5 @@
         <property name="temperatureReader" ref="temperature"/>
         <property name="humidityReader" ref="humidity"/>
         <property name="vibrationReader" ref="vibration"/>
-
     </bean>
 </beans>

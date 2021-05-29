@@ -13,6 +13,9 @@ public class SensorHandler {
     private ISensorReader vibrationReader;
 
 
+    public SensorHandler() {
+    }
+
     public void createTemp() {
         temp = new Client();
         temperatureReader.start(temp.getHz());

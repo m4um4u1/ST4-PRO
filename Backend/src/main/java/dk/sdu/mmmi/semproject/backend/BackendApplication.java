@@ -1,11 +1,9 @@
 package dk.sdu.mmmi.semproject.backend;
 
-import dk.sdu.mmmi.semproject.backend.component.SensorHandler;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
@@ -13,6 +11,7 @@ import org.springframework.web.filter.CorsFilter;
 import java.util.Arrays;
 
 @SpringBootApplication
+@ImportResource("classpath:beans.xml")
 public class BackendApplication {
 
     public static void main(String[] args) {

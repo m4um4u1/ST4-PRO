@@ -1,20 +1,17 @@
 package dk.sdu.mmmi.semproject.backend.service;
 
-import dk.sdu.mmmi.semproject.backend.component.SensorHandler;
+import dk.sdu.mmmi.semproject.backend.component.LiveHandler;
 import dk.sdu.mmmi.semproject.backend.component.UaHandler;
 import org.eclipse.milo.opcua.stack.core.types.builtin.DataValue;
 import org.eclipse.milo.opcua.stack.core.types.builtin.NodeId;
 import org.eclipse.milo.opcua.stack.core.types.builtin.Variant;
 import org.eclipse.milo.opcua.stack.core.types.enumerated.TimestampsToReturn;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Service;
 
 @Service
 public class LiveService {
 
-    ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-    SensorHandler sh = context.getBean("sensorHandler", SensorHandler.class);
+    private final LiveHandler lh;
     private float batchID;
     private int produced;
     private int accepted;
@@ -22,9 +19,10 @@ public class LiveService {
     private float machSpeed;
     private float productType;
     private float amount;
-    private double temperature;
-    private double humidity;
-    private double vibration;
+
+    public LiveService(LiveHandler lh) {
+        this.lh = lh;
+    }
 
 
     public Float getBatchID(){
@@ -104,22 +102,16 @@ public class LiveService {
         return amount;
     }
 
-    public Double getTemperature(){
-        sh.createTemp();
-        temperature = sh.getTemperatureReader().getSd().getValue();
-        return temperature;
+    public double getTemperature() {
+        return lh.getTemperature();
     }
 
-    public Double getHumidity(){
-        sh.createHum();
-        humidity = sh.getHumidityReader().getSd().getValue();
-        return humidity;
+    public double getHumidity() {
+        return lh.getHumidity();
     }
 
-    public Double getVibration(){
-        sh.createVib();
-        vibration = sh.getVibrationReader().getSd().getValue();
-        return vibration;
+    public double getVibration() {
+        return lh.getVibration();
     }
 }
 

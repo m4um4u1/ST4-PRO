@@ -1,6 +1,5 @@
 package dk.sdu.mmmi.semproject.backend.model;
 
-import dk.sdu.mmmi.semproject.backend.component.SensorHandler;
 
 public class LiveData {
 
