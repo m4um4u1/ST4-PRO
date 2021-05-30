@@ -9,9 +9,9 @@
       <module fileurl="file://$PROJECT_DIR$/SpringMongoImplementation/SpringMongoImplementation.iml" filepath="$PROJECT_DIR$/SpringMongoImplementation/SpringMongoImplementation.iml" />
       <module fileurl="file://$PROJECT_DIR$/Temperature/Temperature.iml" filepath="$PROJECT_DIR$/Temperature/Temperature.iml" />
       <module fileurl="file://$PROJECT_DIR$/Vibration/Vibration.iml" filepath="$PROJECT_DIR$/Vibration/Vibration.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Data/Sensors/Humidity_sensor/humidity-sensor.iml" filepath="$PROJECT_DIR$/Data/Sensors/Humidity_sensor/humidity-sensor.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Data/Sensors/Temperature_sensor/temp-sensor.iml" filepath="$PROJECT_DIR$/Data/Sensors/Temperature_sensor/temp-sensor.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Data/Sensors/Vibration_sensor/vibration-sensor.iml" filepath="$PROJECT_DIR$/Data/Sensors/Vibration_sensor/vibration-sensor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Data/Humidity_sensor/humidity-sensor.iml" filepath="$PROJECT_DIR$/Data/Humidity_sensor/humidity-sensor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Data/Temperature_sensor/temp-sensor.iml" filepath="$PROJECT_DIR$/Data/Temperature_sensor/temp-sensor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Data/Vibration_sensor/vibration-sensor.iml" filepath="$PROJECT_DIR$/Data/Vibration_sensor/vibration-sensor.iml" />
     </modules>
   </component>
 </project>

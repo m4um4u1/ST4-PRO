@@ -17,13 +17,13 @@ public class LiveHandler {
     public Double getTemperature(){
         sh.createTemp();
         temperature = sh.getTemperatureReader().getSd().getValue();
-        return temperature;
+        return (double)Math.round(temperature  * 100d) / 100d;
     }
 
     public Double getHumidity(){
         sh.createHum();
         humidity = sh.getHumidityReader().getSd().getValue();
-        return humidity;
+        return (double)Math.round(humidity  * 100d) / 100d;
     }
 
     public Double getVibration(){

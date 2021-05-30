@@ -34,7 +34,7 @@ public class Publisher {
     private HazelcastInstance hz;
     private static final String TOPIC_NAME = "temperature_sensor";
     private static ITopic topic = null;
-    private final Client client;
+    private Client client;
     private CompletableFuture<OpcUaClient> future;
     private static SensorData sd = new SensorData();
     private ValueGenerator vg;

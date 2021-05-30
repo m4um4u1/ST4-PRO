@@ -21,7 +21,7 @@ public class ValueGenerator implements Runnable {
     public void run() {
         while (true) {
             synchronized (lock) {
-                value  = Math.random() * 10;
+                value = Math.random() * 100;
             }
             try {
                 Thread.sleep(1000);
@@ -33,7 +33,7 @@ public class ValueGenerator implements Runnable {
 
     public Double getValue() {
         synchronized (lock) {
-            return (double)Math.round(value * 100d) / 100d;
+            return value;
         }
     }
 }
