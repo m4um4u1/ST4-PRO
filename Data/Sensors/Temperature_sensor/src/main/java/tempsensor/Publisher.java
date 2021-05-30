@@ -17,7 +17,12 @@ import org.eclipse.milo.opcua.stack.core.types.enumerated.TimestampsToReturn;
 import org.eclipse.milo.opcua.stack.core.types.structured.MonitoredItemCreateRequest;
 import org.eclipse.milo.opcua.stack.core.types.structured.MonitoringParameters;
 import org.eclipse.milo.opcua.stack.core.types.structured.ReadValueId;
+import valuegenerator.ValueGenerator;
+
 import static com.google.common.collect.Lists.newArrayList;
+
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.CompletableFuture;
 
 import java.util.List;
@@ -29,15 +34,18 @@ public class Publisher {
     private HazelcastInstance hz;
     private static final String TOPIC_NAME = "temperature_sensor";
     private static ITopic topic = null;
-    private Client client;
+    private final Client client;
     private CompletableFuture<OpcUaClient> future;
     private static SensorData sd = new SensorData();
+    private ValueGenerator vg;
 
     public Publisher() {
         hz = HazelcastClient.newHazelcastClient();
         client = new Client();
         topic = hz.getTopic(TOPIC_NAME);
         future = new CompletableFuture<>();
+        vg = new ValueGenerator();
+        vg.start();
     }
 
     public void readName() {
@@ -71,6 +79,17 @@ public class Publisher {
         }
     }
 
+    public void generateValues() {
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                topic.publish(sd.getId() +":"+ sd.getName() +":"+ vg.getValue() +":"+ sd.getSymbol());
+                System.out.println(sd.getId() +":"+ sd.getName() +":"+ vg.getValue() +":"+ sd.getSymbol());
+            }
+        },0 , 1000);
+    }
+    /*
     public void subscribeToNode() {
         try {
             UaSubscription subscription = client.getClient().getSubscriptionManager().createSubscription(1000.0).get();
@@ -132,4 +151,6 @@ public class Publisher {
         System.out.println(sd.getId() +" "+ sd.getName() +" "+ sd.getValue() + sd.getSymbol());
         topic.publish(sd.getId() +":"+ sd.getName() +":"+ sd.getValue() +":"+ sd.getSymbol());
     }
+
+     */
 }

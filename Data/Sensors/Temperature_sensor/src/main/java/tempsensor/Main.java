@@ -10,7 +10,8 @@ public class Main {
         pub.readId();
         pub.readName();
         pub.readSymbol();
-        pub.subscribeToNode();
+        pub.generateValues();
+        //pub.subscribeToNode();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Press 'Enter' to quit the program");
         scanner.nextLine();
