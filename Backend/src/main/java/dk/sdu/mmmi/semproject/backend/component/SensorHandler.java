@@ -1,40 +1,38 @@
 package dk.sdu.mmmi.semproject.backend.component;
 
+import com.hazelcast.client.HazelcastClient;
+import com.hazelcast.core.HazelcastInstance;
 import dk.sdu.mmmi.semproject.data.Client;
 import dk.sdu.mmmi.semproject.services.ISensorReader;
 
 public class SensorHandler {
 
-    private Client temp;
-    private Client hum;
-    private Client vib;
+    private HazelcastInstance hz;
     private ISensorReader temperatureReader;
     private ISensorReader humidityReader;
     private ISensorReader vibrationReader;
 
 
     public SensorHandler() {
+        this.hz = HazelcastClient.newHazelcastClient();
     }
 
     public void createTemp() {
-        temp = new Client();
-        temperatureReader.start(temp.getHz());
+        temperatureReader.start(hz);
     }
 
     public void createHum() {
-        hum = new Client();
-        humidityReader.start(hum.getHz());
+        humidityReader.start(hz);
     }
 
     public void createVib() {
-        vib = new Client();
-        vibrationReader.start(vib.getHz());
+        vibrationReader.start(hz);
     }
 
     public void stopSensors() {
-        temperatureReader.stop(temp.getHz());
-        humidityReader.stop(hum.getHz());
-        vibrationReader.stop(vib.getHz());
+        temperatureReader.stop(hz);
+        humidityReader.stop(hz);
+        vibrationReader.stop(hz);
     }
 
     public ISensorReader getTemperatureReader() {

@@ -4,7 +4,7 @@ import com.hazelcast.client.HazelcastClient;
 import com.hazelcast.core.HazelcastInstance;
 
 public class Client {
-    HazelcastInstance hz;
+    private HazelcastInstance hz;
 
     public Client() {
         this.hz = HazelcastClient.newHazelcastClient();
